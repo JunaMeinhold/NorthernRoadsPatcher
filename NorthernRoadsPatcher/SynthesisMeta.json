@@ -1,0 +1,13 @@
+{
+  "Nickname": "NorthernRoadsPatcher",
+  "Visibility": "Visible",
+  "OneLineDescription": "",
+  "LongDescription": "",
+  "PreferredAutoVersioning": "Default",
+  "RequiredMods": [
+    "Northern Roads.esp"
+  ],
+  "TargetedReleases": [
+    "SkyrimSE"
+  ]
+}
