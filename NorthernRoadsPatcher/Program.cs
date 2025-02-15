@@ -59,17 +59,6 @@ namespace NorthernRoadsPatcher
         {
             HashSet<string> masters = [];
 
-            void AddMaster(ModKey key)
-            {
-                if (!masters.Add(key.FileName)) return;
-                MasterReference reference = new()
-                {
-                    Master = key
-                };
-
-                state.PatchMod.MasterReferences.Add(reference);
-            }
-
             void AddMasterRecursive(ModKey key)
             {
                 if (!masters.Add(key.FileName)) return;
@@ -137,14 +126,6 @@ namespace NorthernRoadsPatcher
 
             while (queue.TryDequeue(out var queueItem))
             {
-                foreach (var context in state.LinkCache.ResolveAllSimpleContexts<ICellGetter>(queueItem.CellGetter.FormKey))
-                {
-                    if (!(context.Record.ImageSpace?.IsNull ?? true))
-                    {
-                        Console.WriteLine($"{context.ModKey}: XCIM = {context.Record.ImageSpace?.FormKey}");
-                    }
-                }
-
                 Worldspace? worldspace = state.PatchMod.Worldspaces.FirstOrDefault(x => x.FormKey == queueItem.WorldspaceGetter.FormKey);
                 if (worldspace == null)
                 {
