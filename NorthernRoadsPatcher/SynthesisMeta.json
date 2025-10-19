@@ -1,8 +1,8 @@
 {
   "Nickname": "NorthernRoadsPatcher",
   "Visibility": "Visible",
-  "OneLineDescription": "",
-  "LongDescription": "",
+  "OneLineDescription": "Fixes terrain holes and resolves conflicts with Northern Roads by forwarding landscape records",
+  "LongDescription": "This patcher fixes terrain holes and resolves conflicts with Northern Roads by forwarding the last winning Northern Roads record. It is patch-aware and uses name heuristics to detect Northern Roads patches. The patcher searches for all landscape records where Northern Roads (or patches containing 'Northern Roads' in their name) has made changes, then forwards those landscape records along with associated cell data (water height, max height data, and occlusion data) to resolve conflicts and prevent terrain holes.",
   "PreferredAutoVersioning": "Default",
   "RequiredMods": [
     "Northern Roads.esp"
